@@ -43,11 +43,26 @@
   justify-content: center;
   flex-direction: column;
 
-  background: rgba(233, 30, 99, .3);
+  background: rgba(233, 30, 99, 0.3);
   color: white;
   display: none;
+}
+
+.MovieList-poster-fallback {
+  min-width: 200px;
+  height: 100%;
+  text-align: center;
+
+  justify-content: center;
+  flex-direction: column;
+
+  background: rgba(233, 30, 99, 0.5);
+  color: white;
+  display: flex;
 }
 
 .MovieList-item:hover .MovieList-item-overlay {
   display: flex;
 }
+
+
