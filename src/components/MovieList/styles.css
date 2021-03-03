@@ -5,6 +5,12 @@
 .MovieList-title {
   font-weight: 600;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.MovieList-title svg {
+  margin-right: 8px;
 }
 
 .MovieList-list {

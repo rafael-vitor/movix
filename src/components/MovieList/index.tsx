@@ -7,21 +7,22 @@ import { DiscoverDataType } from "../../types";
 type Props = {
   listTitle: string;
   data: DiscoverDataType;
+  icon: React.ReactNode;
 };
 
-function MovieList({ listTitle, data }: Props) {
+function MovieList({ listTitle, data, icon }: Props) {
   return (
     <div className="MovieList">
       <div className="MovieList-title">
-        <AiOutlineFire /> {listTitle}
-        </div>
-        <div className="MovieList-list">
-          {data?.results.map((m) => (
-            <div className="MovieList-item" key={m.original_title}>
-              <div className="MovieList-item-overlay">
-                <p>{m.original_title}</p>
-                <p>{m.release_date.split('-')[0]}</p>
-              </div>
+        {icon} {listTitle}
+      </div>
+      <div className="MovieList-list">
+        {data?.results.map((m) => (
+          <div className="MovieList-item" key={m.id}>
+            <div className="MovieList-item-overlay">
+              <p>{m.original_title}</p>
+              <p>{m.release_date.split("-")[0]}</p>
+            </div>
               <img
                 className="MovieList-item-image"
                 src={`https://image.tmdb.org/t/p/w200/${m.poster_path}`}

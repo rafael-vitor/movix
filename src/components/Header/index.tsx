@@ -1,11 +1,20 @@
-import React from 'react';
-import './styles.css';
+import React from "react";
+import "./styles.css";
 
-function Header() {
+type Props = {
+  onChangeInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+function Header({ onChangeInput }: Props) {
   return (
     <div className="Header">
       <h1>Movies. Listed.</h1>
-      <input className="Header-input" placeholder="search for a movie"  id="movie-input" ></input>
+      <input
+        onChange={onChangeInput}
+        className="Header-input"
+        placeholder="search for a movie"
+        id="movie-input"
+      ></input>
     </div>
   );
 }
