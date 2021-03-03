@@ -23,6 +23,7 @@ function MovieList({ listTitle, data }: Props) {
                 <p>{m.release_date.split('-')[0]}</p>
               </div>
               <img
+                className="MovieList-item-image"
                 src={`https://image.tmdb.org/t/p/w200/${m.poster_path}`}
               ></img>
             </div>
