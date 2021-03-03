@@ -1,0 +1,23 @@
+
+.Header {
+  background-image: url(https://variety.com/wp-content/uploads/2019/07/once-upon-a-time-in-hollywood-4.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://variety.com/wp-content/uploads/2019/07/once-upon-a-time-in-hollywood-4.jpg);
+  background-size: cover;
+  background-position-y: -80px;
+  height: 30vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.Header-input {
+  height: 42px;
+  min-width: 300px;
+  border-radius: 21px;
+
+  text-align: center;
+}
