@@ -78,7 +78,7 @@ function MovieList({ listTitle, data, icon }: Props) {
             ) : (
               <div className="MovieList-poster-fallback">
                 <p>{m.original_title}</p>
-                <p>{m.release_date.split("-")[0]}</p>
+                <p>{m.release_date?.split("-")[0]}</p>
               </div>
             )}
           </div>
