@@ -13,14 +13,28 @@ const discoverPath = `/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}
 const searchPath = `/search/movie?api_key=${API_KEY}`;
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [moviesData, setMoviesData] = useState<DiscoverDataType | undefined>();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [hasError, setHasError] = useState(false);
+  const [moviesData, setMoviesData] = useState<MoviesDataType | undefined>();
 
   const fetchDiscoverMovies = async () => {
-    const response = await fetch(`${BASE_URL}${discoverPath}`);
-    const data = await response.json();
+    try {
+      const response = await fetch(`${BASE_URL}${discoverPath}`);
 
-    setMoviesData(data);
+      if (response.status === 200) {
+        const data = await response.json();
+
+        setMoviesData(data);
+      } else {
+        console.log("unexpected response code");
+        const data = await response.json();
+
+        throw data.status_message;
+      }
+    } catch (e) {
+      console.error(e);
+      setHasError(true);
+    }
   };
 
   useEffect(() => {
@@ -51,14 +65,20 @@ function App() {
   return (
     <div className="App">
       <Header onChangeInput={onChangeInput} />
-      {moviesData !== undefined ? (
+      {!hasError && !!moviesData ? (
         <MovieList
           listTitle={searchQuery ? searchQuery : "Discover"}
-          icon={searchQuery ? <AiOutlineSearch color="red" /> : <AiOutlineFire color="red" />}
+          icon={
+            searchQuery ? (
+              <AiOutlineSearch color="red" />
+            ) : (
+              <AiOutlineFire color="red" />
+            )
+          }
           data={moviesData}
         />
       ) : (
-        <h3>loading...</h3>
+        <h3>{hasError ? "Something went wrong" : "loading..."}</h3>
       )}
     </div>
   );
