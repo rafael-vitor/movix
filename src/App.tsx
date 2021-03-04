@@ -4,14 +4,13 @@ import { AiOutlineFire, AiOutlineSearch } from "react-icons/ai";
 
 import MovieList from "./components/MovieList";
 
-import { BASE_URL } from "./constants";
-import { DiscoverDataType } from "./types";
+import { API_KEY, BASE_URL } from "./constants";
+import { MoviesDataType } from "./types";
 import "./App.css";
 import Header from "./components/Header";
 
-const discoverPath =
-  "/discover/movie?sort_by=popularity.desc&api_key=545ac8664390a4e656692ed8f6f2528e";
-const searchPath = "/search/movie?api_key=545ac8664390a4e656692ed8f6f2528e";
+const discoverPath = `/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
+const searchPath = `/search/movie?api_key=${API_KEY}`;
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
