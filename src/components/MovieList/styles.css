@@ -15,6 +15,7 @@
 
 .MovieList-rating {
   margin-left: auto;
+  display: flex;
 }
 
 .MovieList-rating svg {
@@ -36,6 +37,7 @@
 .MovieList-item {
   margin: 8px;
   position: relative;
+  cursor: pointer;
 }
 
 @media (max-width: 450px) {

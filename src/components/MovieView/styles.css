@@ -1,0 +1,12 @@
+.MovieView h2 {
+  margin-top: 0;
+}
+
+.MovieView img {
+  margin-bottom: 8px;
+}
+
+.MovieView-details {
+  display: flex;
+  justify-content: space-between;
+}
