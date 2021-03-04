@@ -55,7 +55,7 @@ function App() {
       {moviesData !== undefined ? (
         <MovieList
           listTitle={searchQuery ? searchQuery : "Discover"}
-          icon={searchQuery ? <AiOutlineSearch /> : <AiOutlineFire />}
+          icon={searchQuery ? <AiOutlineSearch color="red" /> : <AiOutlineFire color="red" />}
           data={moviesData}
         />
       ) : (
