@@ -3,10 +3,10 @@ import debounce from "lodash.debounce";
 import { AiOutlineFire, AiOutlineSearch } from "react-icons/ai";
 
 import MovieList from "./components/MovieList";
+import Header from "./components/Header";
 
 import { API_KEY, BASE_URL } from "./constants";
 import { MoviesDataType } from "./types";
-import Header from "./components/Header";
 
 const discoverPath = `/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
 const searchPath = `/search/movie?api_key=${API_KEY}`;
