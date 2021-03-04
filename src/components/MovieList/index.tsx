@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 import MovieView, { MovieProps } from "../MovieView";
-import { DiscoverDataType } from "../../types";
+import { MoviesDataType } from "../../types";
 import "./styles.css";
 
 type Props = {
   listTitle: string;
-  data: DiscoverDataType;
+  data: MoviesDataType;
   icon: React.ReactNode;
 };
 

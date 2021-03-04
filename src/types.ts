@@ -1,5 +1,5 @@
 
-export type DiscoverDataType = {
+export type MoviesDataType = {
   page: number;
   results: Array<{
     id: number;
