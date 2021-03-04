@@ -6,7 +6,6 @@ import MovieList from "./components/MovieList";
 
 import { API_KEY, BASE_URL } from "./constants";
 import { MoviesDataType } from "./types";
-import "./App.css";
 import Header from "./components/Header";
 
 const discoverPath = `/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
